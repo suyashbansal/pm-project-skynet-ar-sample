@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Make the page mobile compatible -->
+  <meta
+    name="viewport"
+    content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+  />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <title>Skynet</title>
+  <style>
+    .background {
+      background-color: #233940;
+      zoom: 100%;
+    }
+    .group-2 {
+      height: 168.46px;
+      width: 365px;
+      margin: 88px auto 37px;
+      display: block;
+    }
+    .group-1 {
+      height: 300px;
+      width: 400px;
+      margin: 5px auto 7px;
+      display: block;
+    }
+    .group-3 {
+      height: 218px;
+      width: 400px;
+      margin: 88px auto 37px;
+      display: block;
+    }
+    .point-your-camera-at {
+      min-height: 54px;
+      width: 366px;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+      white-space: pre-line;
+    }
+    .ar-logo {
+      width: 100%;
+      height: 45px;
+      opacity: 0.9;
+      text-align: center;
+    }
+    .ar-disclaimers-title {
+      color: #ffffff;
+      font-family: Arial;
+      white-space: pre-line;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .ar-disclaimers-text {
+      color: #ffffff;
+      font-family: Arial;
+      white-space: pre-line;
+      text-align: center;
+      font-size: 14px;
+    }
+    .ar-requirements {
+      color: #ffffff;
+      font-family: Arial;
+      white-space: pre-line;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .ar-requirements a {
+      color: #ffffff !important;
+      text-decoration: underline;
+    }
+    .launching-the-ar-exp {
+      margin: 56px auto 0;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      color: #ffffff;
+      font-family: Arial;
+    }
+    .ar-exp-note {
+      width: 366px;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 20px;
+      text-align: center;
+      margin: 36px auto 0;
+    }
+    #launch {
+      display: none;
+    }
+  </style>
+</head>
+<body class="background">
+<div class="launching-the-ar-exp">
+  Loading your AR experience...
+</div>
+
+<img src="assets/images/group_2.svg" alt="AR" class="group-2">
+
+<div class="point-your-camera-at">
+  Aim your camera at the floor or a flat
+surface to anchor your object.
+</div>
+
+<div>
+  <div class="ar-disclaimers-title">Disclaimer</div>
+  <div class="ar-disclaimers-text">The 3D product model is indicative only.</div>
+</div>
+
+
+<div class="ar-requirements">
+  This page will exit if you do not meet the following <a href=https://support.nextechar.com/hc/en-us/articles/4620672453783-What-are-the-requirements-to-view-3D-models-in-Augmented-Reality-AR-on-a-mobile-device- target="_blank">requirements</a>.
+</div>
+
+
+<div class="ar-logo">
+  <img src="assets/images/SkyNet.svg" alt="AR" class="ar-logo-img">
+</div>
+
+<a id="launch" rel="ar" href="https://d2nayzusap6sa3.cloudfront.net/jobs/8aea607c/packaging/mesh.usdz?page_id=3pn2osiimv&action=ar-scan#allowsContentScaling=1" download="asset.usdz"><img src="">here</a>
+<canvas id="renderCanvas" data-mode="ar" data-use-dynamic-configurator="false" data-glb-url="https://d2nayzusap6sa3.cloudfront.net/jobs/8aea607c/packaging/meshc.glb?page_id=3pn2osiimv&amp;action=ar-scan" data-config="false" data-api-url="https://portal.threedy.ai/api/" data-api-key="VdsfTdt5.pRbm8iYyCPq4xwV6ygT7oUdeGYvuBjMd"></canvas>
+<script type="text/javascript">
+  function loadAR() {
+    console.log('ios -- load AR');
+    var scale = 'scale(1)';
+    document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
+    document.body.style.msTransform =   scale;       // IE 9
+    document.body.style.transform = scale;     // General
+    var a = document.createElement("a");
+    if (a.relList.supports("ar")) {
+        // AR is available.
+      setTimeout(function(){
+        document.querySelector('#launch').click();
+      }, 3000);
+        
+        setTimeout(function(){
+            window.location.href = 'https://pier1.com/products/elon-contemporary-velvet-upholstered-accent-chair';
+        }, 15000)
+        
+    } else {
+      const anchor = document.getElementById('launch');
+      if (anchor) {
+        window.location.href = anchor.href;
+      }
+    }
+  }
+
+  function loadVariantAR(variantHref) {
+    console.log('ios -- load variantAR: ', variantHref);
+
+    // Update anchor
+    const anchor = document.getElementById('launch');
+    if (anchor) {
+      anchor.href = variantHref + "#allowsContentScaling=1";
+      loadAR();
+    }
+  }
+</script>
+<script src="runtime.ed895ff5d1b30ccf14a7.js"></script><script src="npm.babylonjs.dd450c1156be021ea809.chunk.js"></script><script src="npm.axios.7593ccd6501c42143bc1.chunk.js"></script><script src="npm.qrcode.701a9476fb69b9563871.chunk.js"></script><script src="npm.three.979314440732b7a809e0.chunk.js"></script><script src="npm.css-loader.0eb555ff77cc130cbd1d.chunk.js"></script><script src="npm.webpack.2049f55e93cef2b0e2a3.chunk.js"></script><script src="npm.base64-js.17d68823a6d7a8341889.chunk.js"></script><script src="npm.dijkstrajs.0a8c5438d6469b44bfd1.chunk.js"></script><script src="npm.encode-utf8.039716e741b1a2b1a72f.chunk.js"></script><script src="main.9036405e503d0e62ed2e.chunk.js"></script></body>
+</html>
